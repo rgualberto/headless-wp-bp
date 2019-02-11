@@ -15,13 +15,13 @@ import canUseDom from '../../../utilities/canUseDom';
 import Footer from '../../layout/Footer';
 import api from '../../../api';
 
-const AsyncDefault = AsyncChunks.generateChunk(() => 
+const AsyncDefault = AsyncChunks.generateChunk(() =>
 	import( /* webpackChunkName: "Default" */ '../Default'));
 
-const AsyncHome = AsyncChunks.generateChunk(() => 
+const AsyncHome = AsyncChunks.generateChunk(() =>
 	import( /* webpackChunkName: "Home" */ '../Home'));
 
-const AsyncPost = AsyncChunks.generateChunk(() => 
+const AsyncPost = AsyncChunks.generateChunk(() =>
 	import( /* webpackChunkName: "Post" */ '../Post'));
 
 const templates = {
@@ -49,8 +49,8 @@ class LoadTemplate extends Component {
 
 			// Slug will either come from a prop or a URL param from Router
 			// Necessary because some slugs come from URL params
-			slug: this.props.slug 
-				? this.props.slug 
+			slug: this.props.slug
+				? this.props.slug
 				: this.props.match.params.slug
 		}
 
@@ -93,9 +93,11 @@ class LoadTemplate extends Component {
 	}
 
 	fetchData() {
-		if (!this.props.data[this.props.type][this.state.slug]) {
+		if (!this.props.data[this.props.type] || !this.props.data[this.props.type][this.state.slug]) {
+			const dataType = this.props.type === "post" ? "posts" : this.props.type;
+
 			// Load page content from API by slug
-			api.Content.dataBySlug(this.props.type, this.state.slug).then(
+			api.Content.dataBySlug(dataType, this.state.slug).then(
 				res => {
 					this.props.load({
 						type: this.props.type,
@@ -123,7 +125,7 @@ class LoadTemplate extends Component {
 		this.checkForPreview();
 
 		let data = this.state.preview;
-		
+
 		if (!this.state.preview && this.props.data[this.props.type] && this.props.data[this.props.type][this.state.slug]) {
 			data = this.props.data[this.props.type][this.state.slug];
 		}
