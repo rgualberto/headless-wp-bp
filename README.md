@@ -1,3 +1,5 @@
+forked from [Keen react-wp-rest](https://github.com/keen-studio/react-wp-rest).
+
 # Server Side Rendered / Code Split React + Wordpress REST API - built by Keen (WIP)
 This repo provides a boilerplate for pairing the WP Rest API with a server-side rendered and code split React client, built by [Keen](https://keen-studio.com).
 
