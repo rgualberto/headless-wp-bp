@@ -36,9 +36,18 @@ class App extends Component {
 						}
 						exact
 						path="/post/:slug"/>,
+					<Route
+						key="campaign"
+						render={(props)=>
+							<LoadTemplate
+							{...props}
+							template="campaign"
+							type="campaign" />
+						}
+						exact
+						path="/campaign/:slug"/>,
 
 					pages.map((route, i) => {
-
 						// If home, set path to empty string, = '/'
 						if (route.slug === 'home') {
 							route.path = '';
@@ -72,7 +81,7 @@ class App extends Component {
 						)
 					}),
 
-					<Route exact key="wp-draft" page="/wp-draft" render={props => 
+					<Route exact key="wp-draft" page="/wp-draft" render={props =>
 						<LoadTemplate {...props} slug={'wp-draft'} type={'pages'} />} />,
 
 					<Route key="not-found" component={NotFound} />
