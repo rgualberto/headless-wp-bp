@@ -34,14 +34,6 @@ const templates = {
 	campaign: AsyncCampaign
 }
 
-const mapStateToProps = state => ({
-	data: state.api.data
-});
-
-const mapDispatchToProps = dispatch => ({
-	load: (data) => dispatch({ type: 'LOAD_DATA_BY_SLUG', payload: data })
-});
-
 class LoadTemplate extends Component {
 
 	constructor(props) {
@@ -100,19 +92,7 @@ class LoadTemplate extends Component {
 		if (!this.props.data[this.props.type] || !this.props.data[this.props.type][this.state.slug]) {
 			const dataType = this.props.type === "post" ? "posts" : this.props.type;
 
-			// Load page content from API by slug
-			api.Content.dataBySlug(dataType, this.state.slug).then(
-				res => {
-					this.props.load({
-						type: this.props.type,
-						slug: this.state.slug,
-						data: res
-					})
-				},
-				error => {
-					console.warn(error);
-				}
-			);
+			this.props.loadDataBySlug(dataType, this.state.slug, this.props.type);
 		}
 	}
 
@@ -163,5 +143,14 @@ class LoadTemplate extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	data: state.api.data
+});
+
+const mapDispatchToProps = dispatch => ({
+	load: (data) => dispatch({ type: 'LOAD_DATA_BY_SLUG', payload: data }),
+	loadDataBySlug: (dataType, slug, baseType) => dispatch({ type: 'GET_DATA_BY_SLUG', dataType, slug, baseType })
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoadTemplate);
