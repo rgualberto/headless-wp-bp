@@ -7,8 +7,12 @@ import createSagaMiddleware from 'redux-saga';
 import { promiseMiddleware } from './middleware';
 // import reducers from './reducers';
 import api from './reducers/api';
+import wpDataReducer from './reducers/wpDataReducer';
 
-const reducers = combineReducers({ api });
+const reducers = combineReducers({
+	api,
+	wpDataReducer
+});
 
 const sagaMiddleware = createSagaMiddleware();
 

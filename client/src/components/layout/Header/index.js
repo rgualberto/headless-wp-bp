@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-
-import api from '../../../api';
+import {getMenu} from '../../../reducers/wpDataReducer';
 
 import './index.css';
-
-const mapStateToProps = (state) => ({
-	mainMenu: state.api.menus.main
-});
-
-const mapDispatchToProps = (dispatch) => ({
-	loadMenu: (menu) => dispatch({ type: 'LOAD_MENU', payload: menu })
-});
 
 class Header extends Component {
 
 	constructor(props) {
 		super(props);
-		this.props.loadMenu(api.Menus.bySlug('main'));
+		this.props.getMenu('main')
 		this.buildMenu = this.buildMenu.bind(this);
 	}
 
@@ -45,4 +37,15 @@ class Header extends Component {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+const mapStateToProps = (state) => ({
+	mainMenu: state.wpDataReducer.menus.main
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	getMenu: bindActionCreators(getMenu, dispatch)
+});
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Header);

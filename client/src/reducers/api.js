@@ -67,7 +67,7 @@ export default (state = defaultState, action) => {
 		case 'CLEAR_API_DATA_BY_SLUG':
 
 			if (state.data[action.payload.type] && state.data[action.payload.type][action.payload.slug]) {
-				
+
 				let newState = { ...state};
 				delete newState.data[action.payload.type][action.payload.slug];
 

@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import queryString from 'qs';
@@ -13,6 +14,7 @@ import queryString from 'qs';
 import AsyncChunks from '../../utilities/AsyncLoader';
 import canUseDom from '../../../utilities/canUseDom';
 import Footer from '../../layout/Footer';
+import {getDataBySlug} from '../../../reducers/wpDataReducer';
 import api from '../../../api';
 
 const AsyncDefault = AsyncChunks.generateChunk(() =>
@@ -92,7 +94,7 @@ class LoadTemplate extends Component {
 		if (!this.props.data[this.props.type] || !this.props.data[this.props.type][this.state.slug]) {
 			const dataType = this.props.type === "post" ? "posts" : this.props.type;
 
-			this.props.loadDataBySlug(dataType, this.state.slug, this.props.type);
+			this.props.getDataBySlug(dataType, this.state.slug, this.props.type);
 		}
 	}
 
@@ -145,12 +147,14 @@ class LoadTemplate extends Component {
 }
 
 const mapStateToProps = state => ({
-	data: state.api.data
+	data: state.wpDataReducer.data
 });
 
 const mapDispatchToProps = dispatch => ({
-	load: (data) => dispatch({ type: 'LOAD_DATA_BY_SLUG', payload: data }),
-	loadDataBySlug: (dataType, slug, baseType) => dispatch({ type: 'GET_DATA_BY_SLUG', dataType, slug, baseType })
+	getDataBySlug: bindActionCreators(getDataBySlug, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoadTemplate);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(LoadTemplate);

@@ -1,5 +1,5 @@
-import loadTemplateSagas from './components/templates/LoadTemplate/loadTemplateSaga';
+import wpDataSagas from './sagas/wpDataSaga';
 
 export default [
-	loadTemplateSagas
+	wpDataSagas
 ];

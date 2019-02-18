@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import AsyncChunks from './components/utilities/AsyncLoader';
 import NotFound from './components/templates/NotFound';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import LoadTemplate from './components/templates/LoadTemplate';
-import api from './api';
-
-const mapStateToProps = (state) => ({
-	pageList: state.api.lists.pages
-});
-
-const mapDispatchToProps = (dispatch) => ({
-	loadPages: (list) => dispatch({ type: 'LOAD_PAGES_LIST', payload: list })
-});
+import {getPagesList} from './reducers/wpDataReducer';
 
 class App extends Component {
 
@@ -91,7 +84,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.props.loadPages(api.Content.pageList());
+		this.props.getPagesList()
 
 		// Over-eager load code split chunks
 		// Two seconds after App mounts (wait for more important resources)
@@ -110,5 +103,13 @@ class App extends Component {
 		);
 	}
 }
+
+const mapStateToProps = (state) => ({
+	pageList: state.wpDataReducer.lists.pages
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	getPagesList: bindActionCreators(getPagesList, dispatch)
+});
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
