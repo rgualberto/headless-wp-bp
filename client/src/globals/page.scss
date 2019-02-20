@@ -1,0 +1,245 @@
+@import 'globals.scss';
+
+/*** base page setup ***/
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body,
+body > div,
+.app {
+  height: 100%;
+}
+
+body {
+  font-family: 'Bolton Regular', sans-serif;
+  background-color: $white;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+.site {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  > .site__inner {
+    flex-grow: 1;
+  }
+}
+
+.app--mqcms [class*=col__] {
+	margin: 0;
+	padding: 0;
+}
+
+/*** page container widths ***/
+
+.max-wrap {
+  width: 100%;
+  max-width: $large;
+  margin: 0 auto;
+  padding: 0 rem(9);
+
+  @include breakpoint($small) {
+    padding: 0 rem(16);
+  }
+
+  @include breakpoint($medium) {
+    padding: 0 rem(24);
+  }
+
+  @include breakpoint($large) {
+    padding: 0 rem(20);
+  }
+
+  @include breakpoint($x-large) {
+    padding: 0 rem(24);
+  }
+
+  @include breakpoint($xx-large) {
+    padding: 0;
+  }
+
+  &.max-wrap--wide {
+    max-width: $x-large;
+
+    @include breakpoint($x-large) {
+      padding: 0 rem(24);
+    }
+
+    @include breakpoint($xx-large) {
+      padding: 0 rem(24);
+    }
+
+    @include breakpoint('1570px') {
+      padding: 0;
+    }
+  }
+
+  &.max-wrap--narrow {
+    max-width: $medium + 82px; // 850
+
+    @include breakpoint($medium + 132px) { // 900
+      padding: 0;
+    }
+
+    @include breakpoint($large) {
+      padding: 0 rem(20);
+    }
+
+    @include breakpoint($large + 50) {
+      padding: 0;
+    }
+  }
+
+  &.max-wrap--full {
+    max-width: 100%;
+
+    @include breakpoint($xx-large) {
+      padding: 0 rem(24);
+    }
+  }
+}
+
+.vh { // visibly hidden - not actionable
+  position: absolute !important;
+  display: flex;
+  visibility: visible;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: 1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+
+  &-a { // visibly hidden - but actionable
+    position: absolute !important;
+    display: block;
+    top: -1px;
+    width: 0;
+    height: 0;
+    cursor: default;
+    overflow: hidden;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+[tabindex="-1"],
+[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+// iOS zoom input fix -
+@supports (-webkit-overflow-scrolling: touch) {
+  .select.select.select.select.select.select.select .select__field,
+  .input.input.input.input.input.input.input.input .input__field {
+    font-family: 'Bolton Light', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0;
+  }
+
+  .select.select.select.select.select.select.select .select__field:focus,
+  .input.input.input.input.input.input.input.input .input__field:focus {
+    font-family: 'Bolton Light', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0;
+  }
+}
+
+/************ components until we figure out better workflow ************/
+
+@import '../components/base/button/button.scss';
+
+/***************************
+New components until figure out import flow
+***************************/
+
+.text-orange {
+  color: $mqOrange;
+}
+
+.text-teal {
+  color: $cerulean;
+}
+
+.input .input__field-wrap {
+  background-color: transparent;
+}
+
+.input .input__field {
+  background-color: $white;
+}
+
+.heading1 {
+  font-size: rem(36);
+  line-height: rem(44);
+
+  @include breakpoint($medium) {
+    font-size: rem(40);
+    line-height: rem(52);
+  }
+}
+
+.heading2 {
+  font-size: rem(20);
+  line-height: rem(28);
+
+  @include breakpoint($medium) {
+    font-size: rem(26);
+    line-height: rem(34);
+  }
+}
+
+.heading3 {
+  font-size: rem(18);
+  line-height: rem(26);
+
+  @include breakpoint($medium) {
+    font-size: rem(22);
+    line-height: rem(30);
+  }
+}
+
+.button .button__text {
+  line-height: rem(20);
+}
+
+/***************************
+themes
+***************************/
+
+.theme--dark {
+	color: $white;
+	background-color: $coolGrey14;
+}
+
+.theme--grey {
+	background-color: $coolGrey2;
+}
+
+.theme--blue {
+  color: $white;
+  background-color: $cerulean;
+}
+
+.header__inner,
+.footer__inner,
+.section__inner {
+  max-width: $x-large;
+  margin-left: auto;
+  margin-right: auto;
+}

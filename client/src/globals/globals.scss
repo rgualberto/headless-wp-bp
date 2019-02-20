@@ -1,0 +1,89 @@
+$mqOrange: #ff471c;
+$amaranth: #cb2d3e;
+$amber: #ebbb3d;
+$aquamarine: #2fb17f;
+$cerulean: #33a4c8;
+
+
+$black: #000;
+$coolGrey14: #191919;
+$coolGrey13: #2a2c2d;
+$coolGrey12: #44484c;
+$coolGrey11: #646a70;
+$coolGrey10: #868f96;
+$coolGrey9: #9ba4aa;
+$coolGrey8: #b1b9bf;
+$coolGrey7: #c7cdd2;
+$coolGrey6: #dde2e6;
+$coolGrey5: #e6eaed;
+$coolGrey4: #ebeef0;
+$coolGrey3: #eef1f3;
+$coolGrey2: #f2f4f5;
+$coolGrey1: #fbfcfc;
+$white: #fff;
+
+
+$borderColor: $coolGrey5;
+
+
+$shadowColor: rgba(0,0,0,0.1);
+$darkShadowColor: rgba(0,0,0,0.4);
+$bgDimmer: rgba(0, 0, 0, 0.6);
+$bgDimmerLight: rgba(255, 255, 255, 0.8);
+$genericBoxShadow: 0 0 10px 0 $shadowColor;
+$darkBoxShadow: 0 0 15px 0 $darkShadowColor;
+$bottomBoxShadow: 0 5px 10px -5px $shadowColor;
+
+
+$shortAnimationTime: 0.35s;
+$mediumAnimationTime: 0.55s;
+$longAnimationTime: 1s;
+
+
+$totalColumns: 12;
+$borderRadiusSmall: 3px;
+$borderRadius: 6px;
+$borderRadiusLarge: 18px;
+
+
+$small: 450px; // 0-450 most phones
+$medium: 768px; // 450-768 phones in landscape and very small tablets
+$large:  1100px; // 768-1100 tablets in portrait or landscape
+$x-large:  1300px;
+$xx-large:  1500px;
+
+
+@mixin breakpoint($breakpoint) {
+  @media screen and (min-width: $breakpoint), print {
+    @content;
+  }
+}
+
+
+@mixin breakpoint-below($breakpoint) {
+  $breakpoint: ($breakpoint - 1px);
+
+  @media screen and (max-width: $breakpoint), print {
+    @content;
+  }
+}
+
+
+@function rem($pixels) {
+  $context: 16;
+
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+
+@function col-amount($cols) {
+  @return percentage($cols / $totalColumns);
+}

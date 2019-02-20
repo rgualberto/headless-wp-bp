@@ -1,0 +1,328 @@
+@import '../../../globals/globals.scss';
+
+.button {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: rem(90);
+  max-width: rem(175);
+  min-height: rem(35);
+  font-weight: 700;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: $borderRadiusSmall;
+  background: none;
+  margin: 0;
+  padding: rem(6) rem(10);
+  transition: color $shortAnimationTime ease-in-out 0s, background-color $shortAnimationTime ease-in-out 0s, border-color $shortAnimationTime ease-in-out 0s;
+
+  @include breakpoint($medium) {
+    min-width: rem(115);
+    max-width: rem(210);
+    min-height: rem(38);
+    padding: rem(10);
+  }
+
+  & + .button {
+    margin-left: rem(18);
+  }
+
+  .grid {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .button__text {
+    font-family: 'Bolton Regular', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  /** primary **/
+
+  &--primary {
+    color: $white;
+    background-color: $coolGrey14;
+    border: rem(1) solid $coolGrey14;
+
+    &:visited {
+      color: $white;
+      background-color: $coolGrey14;
+      border: rem(1) solid $coolGrey14;
+    }
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $coolGrey12;
+      border: rem(1) solid $coolGrey12;
+    }
+
+    &:active {
+      color: $white;
+      background-color: $black;
+      border: rem(1) solid $black;
+    }
+
+    &[disabled],
+    &.button--disabled {
+      &:visited,
+      &:hover,
+      &:active {
+        color: $white;
+        background-color: $coolGrey6;
+        border: rem(1) solid $coolGrey6;
+        cursor: default;
+      }
+
+      color: $white;
+      background-color: $coolGrey6;
+      border: rem(1) solid $coolGrey6;
+      cursor: default;
+    }
+  }
+
+  /** secondary **/
+
+  &--secondary {
+    color: $coolGrey11;
+    background-color: $white;
+    border: rem(1) solid $coolGrey8;
+
+    &:visited {
+      color: $coolGrey11;
+      background-color: $white;
+      border: rem(1) solid $coolGrey8;
+    }
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $coolGrey12;
+      border: rem(1) solid $coolGrey12;
+    }
+
+    &:active {
+      color: $white;
+      background-color: $black;
+      border: rem(1) solid $black;
+    }
+
+    &[disabled],
+    &.button--disabled {
+      &:visited,
+      &:hover,
+      &:active {
+        color: $coolGrey7;
+        background-color: $white;
+        border: rem(1) solid $coolGrey7;
+        cursor: default;
+      }
+
+      color: $coolGrey7;
+      background-color: $white;
+      border: rem(1) solid $coolGrey7;
+      cursor: default;
+    }
+  }
+
+  /** link **/
+
+  &--tertiary {
+    color: $coolGrey14;
+    background: none;
+    border: rem(1) solid transparent;
+
+    &:visited {
+      color: $coolGrey14;
+      background: none;
+      border: rem(1) solid transparent;
+    }
+
+    &:hover,
+    &:focus {
+      color: $coolGrey14;
+      background-color: $coolGrey3;
+      text-decoration: underline;
+      border: rem(1) solid transparent;
+    }
+
+    &:active {
+      color: $coolGrey14;
+      background-color: $coolGrey5;
+      border: rem(1) solid transparent;
+      text-decoration: none;
+    }
+
+    &[disabled],
+    &.button--disabled {
+      &:visited,
+      &:hover,
+      &:active {
+        color: $coolGrey7;
+        background: none;
+        border: rem(1) solid transparent;
+        text-decoration: none;
+        cursor: default;
+      }
+
+      color: $coolGrey7;
+      background: none;
+      border: rem(1) solid transparent;
+      text-decoration: none;
+      cursor: default;
+    }
+  }
+
+  /** anchor **/
+
+  &--text {
+    display: inline;
+    min-width: 0;
+    min-height: 0;
+    max-width: none;
+    text-align: inherit;
+    text-decoration: underline;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+
+    .button__text {
+      text-transform: none;
+    }
+
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+      color: inherit;
+      background: none;
+      border: none;
+    }
+  }
+
+  /** has icon **/
+
+  &--has-icon {
+    @include breakpoint($medium) {
+      padding: rem(9) rem(10);
+    }
+
+    .ui-icon {
+      flex: none;
+      margin-right: rem(6);
+    }
+
+    .button__text {
+      text-align: left;
+    }
+  }
+
+  /** icon only **/
+
+  &--icon-only {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    min-height: 0;
+    background: none;
+    text-decoration: none;
+    border: none;
+    padding: 0;
+
+    &:visited,
+    &:hover,
+    &:active {
+      color: inherit;
+      background: none;
+      border: none;
+    }
+
+    .ui-icon {
+      transition: opacity $shortAnimationTime ease-in-out 0s, color $shortAnimationTime ease-in-out 0s;
+    }
+
+    &:hover,
+    &:focus {
+      .ui-icon {
+        opacity: 0.5;
+
+        &--delete {
+          opacity: 1;
+          color: $amaranth;
+        }
+      }
+    }
+  }
+
+  &--vertical {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+
+    .grid {
+      flex-direction: column;
+
+      .ui-icon {
+        margin: 0 0 rem(3) 0;
+      }
+    }
+  }
+
+  /** tooltip open so higher z index **/
+
+  &._open-tooltip {
+    z-index: 2;
+  }
+
+}
+
+// filter options button - until this is a real component
+
+.filter-options__removal {
+  align-items: center;
+
+  @include breakpoint-below($small) {
+    padding-left: rem(16);
+  }
+
+  .filter-options__applied {
+    color: $coolGrey13;
+    line-height: rem(14);
+    margin-right: rem(12);
+  }
+
+  .button {
+    min-width: rem(110);
+    height: rem(26);
+    min-height: rem(26);
+    max-height: rem(26);
+    border-radius: rem(13);
+    text-transform: none;
+    color: $coolGrey13;
+    background-color: $coolGrey6;
+    border: none;
+    padding: rem(3) rem(5);
+
+    &:visited,
+    &:hover,
+    &:active {
+      color: $coolGrey2;
+      background-color: $coolGrey11;
+    }
+
+    .button__content {
+      flex-direction: row-reverse;
+
+      .ui-icon {
+        width: rem(13);
+        height: rem(13);
+        margin: 0 0 0 rem(6);
+      }
+    }
+  }
+}

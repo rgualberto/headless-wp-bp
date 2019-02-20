@@ -9,6 +9,7 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import LoadTemplate from './components/templates/LoadTemplate';
 import {getPagesList} from './reducers/wpDataReducer';
+import stylesheet from './globals/page.css'
 
 class App extends Component {
 
