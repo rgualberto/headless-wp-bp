@@ -1,0 +1,104 @@
+/***************************
+content - set up
+***************************/
+.content--centered {
+  text-align: center; }
+
+.content__body > *,
+.tile > * {
+  margin: 0 0 1.25rem 0; }
+
+.content__body > *:last-child,
+.tile > *:last-child {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.content,
+.content__main-img {
+  max-width: 31.25rem;
+  margin: 0 auto; }
+  @media screen and (min-width: 768px), print {
+    .content,
+    .content__main-img {
+      max-width: 100%; } }
+
+.content .content__icon-img {
+  max-width: 5rem;
+  margin-left: auto;
+  margin-right: auto; }
+
+.content .content__icon-img--lg {
+  max-width: 16.875rem;
+  margin-left: auto;
+  margin-right: auto; }
+
+.content .content__icon-img--sm {
+  max-width: 4.375rem;
+  margin-left: auto;
+  margin-right: auto; }
+
+.content .content__foot {
+  margin-top: 1.25rem; }
+
+.content .content__foot-img {
+  max-width: 21.875rem;
+  margin-left: auto;
+  margin-right: auto; }
+
+.content .content__btn {
+  max-width: 3.75rem;
+  margin: 1.875rem auto 0 auto; }
+
+.content .content__icon-group {
+  max-width: 30rem;
+  margin-top: 3.75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  @media screen and (min-width: 768px), print {
+    .content .content__icon-group {
+      margin-left: 0; } }
+
+.content .content__btn img {
+  max-width: 3.75rem; }
+
+.content ul {
+  text-align: left;
+  margin: 1.25rem 0 1.25rem 1.25rem;
+  padding: 0; }
+
+.content li {
+  margin: 0.75rem 0; }
+
+/***************************
+base section - set up
+***************************/
+.section img {
+  vertical-align: middle; }
+
+.section .section__inner {
+  padding: 6.25rem 0 1.875rem 0; }
+  @media screen and (min-width: 768px), print {
+    .section .section__inner {
+      padding: 5rem 0; } }
+  .section .section__inner > .grid {
+    justify-content: center;
+    align-items: center; }
+    .section .section__inner > .grid > [class*=col__] {
+      padding-top: 0.625rem;
+      padding-bottom: 0.625rem; }
+      @media screen and (min-width: 768px), print {
+        .section .section__inner > .grid > [class*=col__] {
+          padding-top: 0;
+          padding-bottom: 0; } }
+
+.section .content {
+  width: 100%;
+  align-items: center;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem; }
+  @media screen and (min-width: 768px), print {
+    .section .content {
+      padding: 0 2.25rem; } }
+
+.section .content--head {
+  padding-bottom: 1.25rem; }

@@ -12,6 +12,10 @@ import {
   SET_DATA_BY_SLUG,
   GET_PAGES_LIST,
   SET_PAGES_LIST,
+  GET_POSTS_LIST,
+  SET_POSTS_LIST,
+  GET_CAMPAIGNS_LIST,
+  SET_CAMPAIGNS_LIST,
   GET_MENU,
   SET_MENU
 } from '../reducers/wpDataReducer';
@@ -28,6 +32,14 @@ export function* getDataBySlugWatch() {
 
 export function* getPagesListWatch() {
   yield takeLatest(GET_PAGES_LIST, getPagesListWorker);
+}
+
+export function* getPostsListWatch() {
+  yield takeLatest(GET_POSTS_LIST, getPostsListWorker);
+}
+
+export function* getCampaignsListWatch() {
+  yield takeLatest(GET_CAMPAIGNS_LIST, getCampaignsListWorker);
 }
 
 export function* getMenuWatch() {
@@ -69,6 +81,24 @@ export function* getPagesListWorker({dataType}) {
   });
 }
 
+export function* getPostsListWorker({dataType}) {
+  const list = yield call(api.Content.postList, dataType);
+
+  yield put({
+    type: SET_POSTS_LIST,
+    payload: list
+  });
+}
+
+export function* getCampaignsListWorker({dataType}) {
+  const list = yield call(api.Content.campaignList, dataType);
+
+  yield put({
+    type: SET_CAMPAIGNS_LIST,
+    payload: list
+  });
+}
+
 export function* getMenuWorker({slug}) {
   const menu = yield call(api.Menus.bySlug, slug);
 
@@ -83,6 +113,8 @@ export default function* WpDataSagas() {
     fork(getDataWatch),
     fork(getDataBySlugWatch),
     fork(getPagesListWatch),
+    fork(getPostsListWatch),
+    fork(getCampaignsListWatch),
     fork(getMenuWatch)
   ]);
 }

@@ -1,0 +1,70 @@
+@import '../../../globals/globals.scss';
+
+.section--hero {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+
+  .section__inner {
+    @include breakpoint-below($medium) {
+      padding-top: rem(50);
+    }
+  }
+}
+
+/***************************
+hero testimonial
+***************************/
+
+.section--hero__testimonial {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: rem(950);
+  bottom: rem(-30);
+  margin: 0 auto;
+  padding: 0 rem(12);
+
+  @include breakpoint($medium) {
+    bottom: rem(-40);
+    padding: 0;
+  }
+
+  .content {
+    height: 100%;
+    text-align: right;
+    border-radius: $borderRadius;
+    color: $black;
+    background-color: $coolGrey4;
+    padding: rem(12) rem(36);
+  }
+
+  .para1 {
+    font-size: rem(12);
+    line-height: rem(18);
+    text-align: left;
+    margin-bottom: rem(8);
+  }
+}
+
+.section--testimonials {
+  &.section--hero .section__inner {
+    padding-bottom: 0;
+
+    > .grid {
+      align-items: stretch;
+
+      > [class*=col__] {
+        padding: rem(10) 0;
+
+        @include breakpoint($medium) {
+          padding: 0 rem(20);
+        }
+      }
+    }
+  }
+
+  .section--hero__testimonial {
+    display: flex;
+  }
+}

@@ -1,0 +1,23 @@
+/*********************** Paralucent ***********************/
+@import url("https://use.typekit.net/lya5lky.css");
+/*********************** Bolton ***********************/
+@font-face {
+  font-family: 'Bolton Light';
+  src: url("/assets/fonts/bolton-light.woff") format("woff"), url("/assets/fonts/bolton-light.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 200; }
+
+@font-face {
+  font-family: 'Bolton Regular';
+  src: url("/assets/fonts/bolton-regular.woff") format("woff"), url("/assets/fonts/bolton-regular.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'Bolton Bold';
+  src: url("/assets/fonts/bolton-bold.woff") format("woff"), url("/assets/fonts/bolton-bold.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 700; }

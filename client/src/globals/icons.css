@@ -1,0 +1,38 @@
+.ui-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  .ui-icon--xs {
+    width: 1rem;
+    height: 1rem; }
+  .ui-icon--lg {
+    width: 2.75rem;
+    height: 2.75rem; }
+  .ui-icon--xl {
+    width: 6.25rem;
+    height: 6.25rem; }
+  .ui-icon--logo-sm {
+    max-width: 3.125rem;
+    width: 100%;
+    height: 2.5rem; }
+  .ui-icon--logo-md {
+    max-width: 10rem;
+    width: 100%;
+    height: 1.875rem; }
+  .ui-icon--logo-lg {
+    max-width: 15.625rem;
+    width: 100%;
+    height: 2.5rem; }
+  .ui-icon--logo-xl {
+    max-width: 21.25rem;
+    width: 100%;
+    height: 5rem; }
+  .ui-icon--rounded {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    color: #fff;
+    background-color: #000;
+    padding: 0.625rem; }

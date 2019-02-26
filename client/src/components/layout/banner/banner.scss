@@ -1,0 +1,138 @@
+@import '../../../globals/globals.scss';
+
+/***************************
+content - set up
+***************************/
+
+.content--centered {
+	text-align: center;
+}
+
+.content__body > *,
+.tile > * {
+	margin: 0 0 rem(20) 0;
+}
+
+.content__body > *:last-child,
+.tile > *:last-child {
+	margin-top: 0;
+  margin-bottom: 0;
+}
+
+.content,
+.content__main-img {
+	max-width: rem(500);
+	margin: 0 auto;
+
+	@include breakpoint($medium) {
+		max-width: 100%;
+	}
+}
+
+.content {
+	.content__icon-img {
+		max-width: rem(80);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.content__icon-img--lg {
+	  max-width: rem(270);
+	  margin-left: auto;
+		margin-right: auto;
+	}
+
+	.content__icon-img--sm {
+		max-width: rem(70);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.content__foot {
+		margin-top: rem(20);
+	}
+
+	.content__foot-img {
+		max-width: rem(350);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.content__btn {
+	  max-width: rem(60);
+	  margin: rem(30) auto 0 auto;
+	}
+
+	.content__icon-group {
+	  max-width: rem(480);
+	  margin-top: rem(60);
+		margin-left: auto;
+		margin-right: auto;
+
+		@include breakpoint($medium) {
+			margin-left: 0;
+		}
+	}
+
+	.content__btn img {
+	  max-width: rem(60);
+	}
+
+	ul {
+	  text-align: left;
+	  margin: rem(20) 0 rem(20) rem(20);
+	  padding: 0;
+	}
+
+	li {
+	  margin: rem(12) 0;
+	}
+}
+
+/***************************
+base section - set up
+***************************/
+
+.section {
+	img {
+		vertical-align: middle;
+	}
+
+	.section__inner {
+		padding: rem(100) 0 rem(30) 0;
+
+		@include breakpoint($medium) {
+			padding: rem(80) 0;
+		}
+
+		> .grid {
+			justify-content: center;
+		  align-items: center;
+
+			> [class*=col__] {
+				padding-top: rem(10);
+				padding-bottom: rem(10);
+
+				@include breakpoint($medium) {
+					padding-top: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.content {
+		width: 100%;
+	  align-items: center;
+		padding-left: rem(28);
+		padding-right: rem(28);
+
+		@include breakpoint($medium) {
+			padding: 0 rem(36);
+		}
+	}
+
+	.content--head {
+	  padding-bottom: rem(20);
+	}
+}

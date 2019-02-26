@@ -1,4 +1,10 @@
+@import 'normalize.scss';
+@import 'fonts.scss';
 @import 'globals.scss';
+@import 'typography.scss';
+@import 'grid.scss';
+@import 'icons.scss';
+@import 'badges.scss';
 
 /*** base page setup ***/
 
@@ -37,6 +43,16 @@ a {
 .app--mqcms [class*=col__] {
 	margin: 0;
 	padding: 0;
+}
+
+[data-fade-in] {
+  opacity: 0;
+  animation-iteration-count: 1;
+  animation: component-fade-in $mediumAnimationTime normal forwards ease-in-out;
+}
+
+@keyframes component-fade-in {
+  to { opacity: 1; }
 }
 
 /*** page container widths ***/
@@ -163,6 +179,13 @@ a {
 /************ components until we figure out better workflow ************/
 
 @import '../components/base/button/button.scss';
+@import '../components/base/cards/card.scss';
+
+/************ layout templates until we figure out better workflow ************/
+
+@import '../components/layout/banner/banner.scss';
+@import '../components/layout/hero/hero.scss';
+@import '../components/layout/use-case/use-case.scss';
 
 /***************************
 New components until figure out import flow

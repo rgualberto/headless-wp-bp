@@ -1,27 +1,38 @@
 import React, { Component } from 'react';
-
-import ContentBlock from '../../utilities/ContentBlock';
+import Header from '../../../components/layout/Header';
+import Banner1 from '../../../components/layout/banner/Banner1';
 
 import './index.css';
 
 class Post extends Component {
 
 	render() {
+		const {
+      data
+    } = this.props;
 
-		if (this.props.data) {
-
-			let data = this.props.data;
-
+		if (data) {
 			return (
-				<article className={`${this.props.slug} post-template`}>
-					<h1>{data.title.rendered}</h1>
-					<ContentBlock content={data.content.rendered} />
+				<article className={`page page--template-post page--name-${data.slug}`}>
+
+					<Header
+						name="IoT"
+						logo="http://smartcities.mq.machineq.com/images/MachineQ_Black_Logo.png"
+						pageName={data.slug}
+					/>
+
+					<div data-fade-in={true}>
+						<Banner1
+							title={data.title.rendered}
+							content={data.content.rendered}
+						/>
+					</div>
+
 				</article>
 			);
-
-		} else {
-			return <div></div>
 		}
+
+		return null;
 	}
 }
 

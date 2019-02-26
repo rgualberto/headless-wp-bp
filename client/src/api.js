@@ -15,7 +15,7 @@ const requests = {
 }
 
 const Menus = {
-	bySlug: (slug) => 
+	bySlug: (slug) =>
 		requests.get(`/wp-json/react-wp-rest/menus/${slug}`)
 }
 
@@ -29,8 +29,12 @@ const Content = {
 	previewDataById: (type, id, wpnonce) =>
 		requests.getWithCredentials(`/wp-json/react-wp-rest/preview?type=${type}&id=${id}&_wpnonce=${wpnonce}&status=draft&_embed`),
 	pageList: () =>
-		requests.get('/wp-json/react-wp-rest/pages/list')
-} 
+		requests.get('/wp-json/react-wp-rest/pages/list'),
+	postList: () =>
+		requests.get('/wp-json/react-wp-rest/posts/list'),
+	campaignList: () =>
+		requests.get('/wp-json/react-wp-rest/campaigns/list')
+}
 
 export default {
 	Menus,

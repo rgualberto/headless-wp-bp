@@ -1,0 +1,28 @@
+.footer {
+  border-bottom: 0.9375rem solid #ff471c;
+  margin-top: 0.75rem; }
+  .footer img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle; }
+  .footer .footer__inner {
+    padding: 1.25rem; }
+    .footer .footer__inner > .grid {
+      justify-content: center;
+      align-items: baseline; }
+      .footer .footer__inner > .grid > div {
+        text-align: center;
+        margin: 0.75rem; }
+  .footer .media-links img {
+    width: auto;
+    max-height: 1.25rem; }
+  .footer .media-links a {
+    margin: 0 0.9375rem; }
+    @media screen and (min-width: 450px), print {
+      .footer .media-links a {
+        margin: 0 0.625rem; } }
+  .footer .terms p,
+  .footer .terms a {
+    color: #44484c; }
+  .footer .footer__logo-img {
+    max-width: 9.375rem; }

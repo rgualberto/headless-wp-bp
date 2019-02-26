@@ -1,0 +1,149 @@
+// @import '~@globals/globals.scss';
+@import 'globals.scss';
+
+/************* table badge *************/
+
+.flat-badge {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: rem(50);
+  max-width: rem(70);
+  font-size: rem(11);
+  line-height: rem(14);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: center;
+  background-color: rgba(0,0,0,0.03);
+  padding: rem(9) rem(3);
+  z-index: 1;
+
+  &--green {
+    background-color: rgba(47, 177, 127, 0.2);
+  }
+
+  &--yellow {
+    background-color: rgba(235, 187, 61, 0.2);
+  }
+
+  &--red {
+    background-color: rgba(203, 45, 62, 0.2);
+  }
+
+  &--white {
+    background-color: $white;
+  }
+}
+
+
+/********* health badge *********/
+
+.health-badge {
+  position: relative;
+  display: inline-block;
+  padding-left: 15px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: rem(-1);
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(8);
+    height: rem(8);
+    border-radius: 50%;
+  }
+
+  &--offline:before {
+    background-color: $coolGrey9;
+  }
+
+  &--poor:before,
+  &--disconnected:before {
+    background-color: $amaranth;
+  }
+
+  &--fair:before {
+    background-color: $amber;
+  }
+
+  &--good:before,
+  &--active:before,
+  &--connected:before {
+    background-color: $aquamarine;
+  }
+}
+
+/********* battery badge *********/
+
+.battery-badge {
+  align-items: center;
+
+  .ui-icon {
+    margin-left: rem(7);
+
+    &--battery-full {
+      color: $aquamarine;
+    }
+    &--battery-high {
+      color: $aquamarine;
+    }
+    &--battery-medium {
+      color: $amber;
+    }
+    &--battery-low {
+      color: $amaranth;
+    }
+    &--battery-low {
+      color: $coolGrey7;
+    }
+  }
+}
+
+/********* confirm badge *********/
+
+.confirm-badge {
+  position: relative;
+  display: inline-block;
+  border-right: rem(1) solid $borderColor;
+  margin-right: rem(15);
+  padding-right: rem(38);
+
+  .ui-icon--confirm {
+    position: absolute;
+    right: rem(14);
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(16);
+    height: rem(16);
+
+    &-check {
+      color: $aquamarine;
+    }
+
+    &-close {
+      color: $amaranth;
+    }
+
+    &-standby {
+      color: $cerulean;
+    }
+
+    &-unconfirmed {
+      color: $coolGrey9;
+    }
+  }
+
+  &:last-child {
+    border: 0;
+    margin-right: 0;
+  }
+
+  &:only-child {
+    padding-right: rem(24);
+
+    .ui-icon--confirm {
+      right: 0;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.cards-wrap.grid {
+  justify-content: center; }
+
+.card {
+  min-width: 18.75rem;
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin: 2.5rem 1.125rem;
+  padding: 2.5rem; }
+  .card ul {
+    margin: 0.9375rem 1.25rem; }

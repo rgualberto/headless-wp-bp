@@ -1,0 +1,84 @@
+@import '../../../globals/globals.scss';
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: $white;
+	border-bottom: rem(2) solid $mqOrange;
+  z-index: 200;
+
+  img {
+  	width: 100%;
+  	height: auto;
+    vertical-align: middle;
+  }
+
+  .header__inner {
+    padding: rem(12) rem(18);
+
+    @include breakpoint($medium) {
+      padding: rem(20) rem(24);
+    }
+
+    > .grid {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      @include breakpoint($medium) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  .header__logo {
+    align-items: baseline;
+    border-bottom: rem(1) solid $borderColor;
+    margin-bottom: rem(10);
+    padding-bottom: rem(10);
+
+    @include breakpoint($medium) {
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .header__logo-img {
+    max-width: rem(150);
+    border-right: rem(1) solid $mqOrange;
+    margin-right: rem(20);
+    padding-right: rem(20);
+  }
+}
+
+/***************************
+nav
+***************************/
+
+.nav {
+  .grid {
+  	list-style: none;
+  	margin: 0;
+  	padding: 0;
+  }
+
+  .nav__item {
+    margin: 0 rem(2);
+
+    @include breakpoint($medium) {
+    	margin: 0 rem(8);
+    }
+
+    &.nav__item--current a {
+      color: $white;
+      background-color: $cerulean;
+    }
+
+    > a {
+      border-radius: rem(3);
+    	padding: rem(5) rem(10);
+    }
+  }
+}

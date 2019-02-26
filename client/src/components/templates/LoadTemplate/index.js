@@ -13,7 +13,6 @@ import queryString from 'qs';
 
 import AsyncChunks from '../../utilities/AsyncLoader';
 import canUseDom from '../../../utilities/canUseDom';
-import Footer from '../../layout/Footer';
 import {getDataBySlug} from '../../../reducers/wpDataReducer';
 import api from '../../../api';
 
@@ -107,7 +106,6 @@ class LoadTemplate extends Component {
 	}
 
 	render() {
-
 		this.checkForPreview();
 
 		let data = this.state.preview;
@@ -139,8 +137,14 @@ class LoadTemplate extends Component {
 		return (
 			<div className="template-wrap">
 				<Meta />
-				<Template data={data} slug={this.state.slug} />
-				<Footer />
+
+				<Template
+					data={data}
+					slug={this.state.slug}
+					allPosts={this.props.allPosts}
+					allPages={this.props.allPages}
+					allCampaigns={this.props.allCampaigns}
+				/>
 			</div>
 		);
 	}

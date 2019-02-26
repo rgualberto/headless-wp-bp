@@ -1,0 +1,58 @@
+// @import '~@globals/globals.scss';
+@import 'globals.scss';
+
+.ui-icon {
+  width: rem(20);
+  height: rem(20);
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &--xs {
+    width: rem(16);
+    height: rem(16);
+  }
+
+  &--lg {
+    width: rem(44);
+    height: rem(44);
+  }
+
+  &--xl {
+    width: rem(100);
+    height: rem(100);
+  }
+
+  &--logo-sm {
+    max-width: rem(50);
+    width: 100%;
+    height: rem(40);
+  }
+
+  &--logo-md {
+    max-width: rem(160);
+    width: 100%;
+    height: rem(30);
+  }
+
+  &--logo-lg {
+    max-width: rem(250);
+    width: 100%;
+    height: rem(40);
+  }
+
+  &--logo-xl {
+    max-width: rem(340);
+    width: 100%;
+    height: rem(80);
+  }
+
+  &--rounded {
+    width: rem(64);
+    height: rem(64);
+    border-radius: rem(32);
+    color: $white;
+    background-color: $black;
+    padding: rem(10);
+  }
+}

@@ -1,0 +1,187 @@
+/*** default setup ***/
+h1, h2, h3, h4, h5, h6,
+p, ul, li, a, button,
+tr, th, td,
+form, input, label, select {
+  margin: 0;
+  padding: 0; }
+
+/*** text groups ***/
+.heading1 {
+  font-family: "paralucent", sans-serif;
+  font-weight: 200;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  letter-spacing: 0.03em;
+  text-transform: none; }
+  @media screen and (min-width: 768px), print {
+    .heading1 {
+      font-size: 2rem;
+      line-height: 2.25rem; } }
+
+.heading2,
+h1,
+h2,
+h3 {
+  font-family: "paralucent", sans-serif;
+  font-weight: 200;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.04em;
+  text-transform: none; }
+  @media screen and (min-width: 768px), print {
+    .heading2,
+    h1,
+    h2,
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.625rem; } }
+
+.heading3,
+h4,
+h5,
+h6 {
+  font-family: "paralucent", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: none; }
+  @media screen and (min-width: 768px), print {
+    .heading3,
+    h4,
+    h5,
+    h6 {
+      font-size: 1.125rem;
+      line-height: 1.375rem; } }
+
+.para1 {
+  font-family: 'Bolton Light', sans-serif;
+  font-weight: 200;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: none; }
+  @media screen and (min-width: 768px), print {
+    .para1 {
+      font-size: 0.9375rem;
+      line-height: 1.3125rem; } }
+  .para1.para1--bold,
+  .para1 strong, .para1 b {
+    font-family: 'Bolton Regular', sans-serif;
+    font-weight: 400; }
+
+.para2,
+p,
+li,
+a,
+button,
+tr,
+th,
+td,
+form,
+input,
+label,
+select {
+  font-family: 'Bolton Regular', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.0625rem;
+  letter-spacing: 0.05em;
+  text-transform: none; }
+  @media screen and (min-width: 768px), print {
+    .para2,
+    p,
+    li,
+    a,
+    button,
+    tr,
+    th,
+    td,
+    form,
+    input,
+    label,
+    select {
+      font-size: 0.8125rem;
+      line-height: 1.125rem; } }
+  .para2.para2--bold,
+  .para2 strong, .para2 b,
+  p.para2--bold,
+  li.para2--bold,
+  a.para2--bold,
+  button.para2--bold,
+  tr.para2--bold,
+  th.para2--bold,
+  td.para2--bold,
+  form.para2--bold,
+  input.para2--bold,
+  label.para2--bold,
+  select.para2--bold,
+  p strong,
+  li strong,
+  a strong,
+  button strong,
+  tr strong,
+  th strong,
+  td strong,
+  form strong,
+  input strong,
+  label strong,
+  select strong,
+  p b,
+  li b,
+  a b,
+  button b,
+  tr b,
+  th b,
+  td b,
+  form b,
+  input b,
+  label b,
+  select b {
+    font-family: 'Bolton Bold', sans-serif;
+    font-weight: 700; }
+
+.para3 {
+  font-family: 'Bolton Regular', sans-serif;
+  font-weight: 400;
+  font-size: 0.65625rem;
+  line-height: 0.8125rem;
+  letter-spacing: 0.05em;
+  text-transform: none; }
+  @media screen and (min-width: 768px), print {
+    .para3 {
+      font-size: 0.71875rem;
+      line-height: 0.875rem; } }
+  .para3.para3--bold,
+  .para3 strong, .para3 b {
+    font-family: 'Bolton Bold', sans-serif;
+    font-weight: 700; }
+
+.caption1 {
+  font-family: 'Bolton Regular', sans-serif;
+  font-weight: 400;
+  font-size: 0.5625rem;
+  line-height: 0.6875rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase; }
+  @media screen and (min-width: 768px), print {
+    .caption1 {
+      font-size: 0.625rem;
+      line-height: 0.75rem; } }
+  .caption1.caption1--bold,
+  .caption1 strong, .caption1 b {
+    font-family: 'Bolton Bold', sans-serif;
+    font-weight: 700; }
+
+.caption2 {
+  font-family: 'Bolton Regular', sans-serif;
+  font-weight: 400;
+  font-size: 0.6875rem;
+  line-height: 0.8125rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase; }
+  @media screen and (min-width: 768px), print {
+    .caption2 {
+      font-size: 0.75rem;
+      line-height: 0.875rem; } }

@@ -1,0 +1,50 @@
+@import '../../../globals/globals.scss';
+
+.footer {
+	border-bottom: rem(15) solid $mqOrange;
+	margin-top: rem(12);
+
+	img {
+		width: 100%;
+		height: auto;
+	  vertical-align: middle;
+	}
+
+	.footer__inner {
+		padding: rem(20);
+
+		> .grid {
+			justify-content: center;
+		  align-items: baseline;
+
+			> div {
+			  text-align: center;
+			  margin: rem(12);
+			}
+		}
+	}
+
+	.media-links {
+		img {
+		  width: auto;
+		  max-height: rem(20);
+		}
+
+		a {
+			margin: 0 rem(15);
+
+			@include breakpoint($small) {
+			  margin: 0 rem(10);
+			}
+		}
+	}
+
+	.terms p,
+	.terms a {
+	  color: $coolGrey12;
+	}
+
+	.footer__logo-img {
+		max-width: rem(150);
+	}
+}

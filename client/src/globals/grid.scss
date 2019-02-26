@@ -1,0 +1,79 @@
+// @import '~@globals/globals.scss';
+@import 'globals.scss';
+
+.grid {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  > .grid {
+    width: auto;
+  }
+}
+
+[class*='col__'] {
+  width: 100%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: rem(4) 0;
+  padding-right: rem(4);
+  padding-left: rem(4);
+
+  @include breakpoint($medium) {
+    margin: 0;
+    padding-right: rem(6);
+    padding-left: rem(6);
+  }
+
+  @include breakpoint($large) {
+    margin: 0;
+    padding-right: rem(9);
+    padding-left: rem(9);
+  }
+}
+
+.col__content {
+  // direct child div of the column - this is what will be an inner grid parent
+}
+
+@for $i from 1 through $totalColumns {
+  .col__sm-#{$i} {
+    -webkit-flex-basis: col-amount($i);
+    -ms-flex-preferred-size: col-amount($i);
+    flex-basis: col-amount($i);
+    max-width: col-amount($i);
+  }
+}
+
+@include breakpoint($medium) {
+  @for $i from 1 through $totalColumns {
+    .col__md-#{$i} {
+      -webkit-flex-basis: col-amount($i);
+      -ms-flex-preferred-size: col-amount($i);
+      flex-basis: col-amount($i);
+      max-width: col-amount($i);
+    }
+  }
+}
+
+@include breakpoint($large) {
+  @for $i from 1 through $totalColumns {
+    .col__lg-#{$i} {
+      -webkit-flex-basis: col-amount($i);
+      -ms-flex-preferred-size: col-amount($i);
+      flex-basis: col-amount($i);
+      max-width: col-amount($i);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.section--hero {
+  position: relative;
+  background-size: cover;
+  background-position: center center; }
+  @media screen and (max-width: 767px), print {
+    .section--hero .section__inner {
+      padding-top: 3.125rem; } }
+
+/***************************
+hero testimonial
+***************************/
+.section--hero__testimonial {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 59.375rem;
+  bottom: -1.875rem;
+  margin: 0 auto;
+  padding: 0 0.75rem; }
+  @media screen and (min-width: 768px), print {
+    .section--hero__testimonial {
+      bottom: -2.5rem;
+      padding: 0; } }
+  .section--hero__testimonial .content {
+    height: 100%;
+    text-align: right;
+    border-radius: 6px;
+    color: #000;
+    background-color: #ebeef0;
+    padding: 0.75rem 2.25rem; }
+  .section--hero__testimonial .para1 {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    text-align: left;
+    margin-bottom: 0.5rem; }
+
+.section--testimonials.section--hero .section__inner {
+  padding-bottom: 0; }
+  .section--testimonials.section--hero .section__inner > .grid {
+    align-items: stretch; }
+    .section--testimonials.section--hero .section__inner > .grid > [class*=col__] {
+      padding: 0.625rem 0; }
+      @media screen and (min-width: 768px), print {
+        .section--testimonials.section--hero .section__inner > .grid > [class*=col__] {
+          padding: 0 1.25rem; } }
+
+.section--testimonials .section--hero__testimonial {
+  display: flex; }

@@ -1,30 +1,37 @@
 import React, { Component } from 'react';
-
-import ContentBlock from '../../utilities/ContentBlock';
-import Button from '../../base/button/Button.jsx';
+import _ from 'lodash';
+import Header from '../../../components/layout/Header';
+import Banner1 from '../../../components/layout/banner/Banner1';
 
 import './index.css';
 
 class Default extends Component {
+	constructor(props) {
+    super(props);
+  }
 
 	render() {
+		const {
+      data
+    } = this.props;
 
-		if (this.props.data) {
-
-			let data = this.props.data;
-
+		if (data) {
 			return (
-				<article className={`${this.props.slug} default-template test`}>
-					<h1>{data.title.rendered}</h1>
+				<article className={`page page--template-default page--name-${data.slug}`}>
 
-						<Button
-							type="button"
-							onClick={() => console.log('testtttt')}
-							displayType="primary"
-							text="Test"
+					<Header
+						name="IoT"
+						logo="http://smartcities.mq.machineq.com/images/MachineQ_Black_Logo.png"
+						pageName={data.slug}
+					/>
+
+					<div data-fade-in={true}>
+						<Banner1
+							title={data.title.rendered}
+							content={data.content.rendered}
 						/>
+					</div>
 
-					<ContentBlock content={data.content.rendered} />
 				</article>
 			);
 		}

@@ -1,0 +1,92 @@
+/************* table badge *************/
+.flat-badge {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 3.125rem;
+  max-width: 4.375rem;
+  font-size: 0.6875rem;
+  line-height: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 0.5625rem 0.1875rem;
+  z-index: 1; }
+  .flat-badge--green {
+    background-color: rgba(47, 177, 127, 0.2); }
+  .flat-badge--yellow {
+    background-color: rgba(235, 187, 61, 0.2); }
+  .flat-badge--red {
+    background-color: rgba(203, 45, 62, 0.2); }
+  .flat-badge--white {
+    background-color: #fff; }
+
+/********* health badge *********/
+.health-badge {
+  position: relative;
+  display: inline-block;
+  padding-left: 15px; }
+  .health-badge::before {
+    content: "";
+    position: absolute;
+    left: -0.0625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%; }
+  .health-badge--offline:before {
+    background-color: #9ba4aa; }
+  .health-badge--poor:before, .health-badge--disconnected:before {
+    background-color: #cb2d3e; }
+  .health-badge--fair:before {
+    background-color: #ebbb3d; }
+  .health-badge--good:before, .health-badge--active:before, .health-badge--connected:before {
+    background-color: #2fb17f; }
+
+/********* battery badge *********/
+.battery-badge {
+  align-items: center; }
+  .battery-badge .ui-icon {
+    margin-left: 0.4375rem; }
+    .battery-badge .ui-icon--battery-full {
+      color: #2fb17f; }
+    .battery-badge .ui-icon--battery-high {
+      color: #2fb17f; }
+    .battery-badge .ui-icon--battery-medium {
+      color: #ebbb3d; }
+    .battery-badge .ui-icon--battery-low {
+      color: #cb2d3e; }
+    .battery-badge .ui-icon--battery-low {
+      color: #c7cdd2; }
+
+/********* confirm badge *********/
+.confirm-badge {
+  position: relative;
+  display: inline-block;
+  border-right: 0.0625rem solid #e6eaed;
+  margin-right: 0.9375rem;
+  padding-right: 2.375rem; }
+  .confirm-badge .ui-icon--confirm {
+    position: absolute;
+    right: 0.875rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem; }
+    .confirm-badge .ui-icon--confirm-check {
+      color: #2fb17f; }
+    .confirm-badge .ui-icon--confirm-close {
+      color: #cb2d3e; }
+    .confirm-badge .ui-icon--confirm-standby {
+      color: #33a4c8; }
+    .confirm-badge .ui-icon--confirm-unconfirmed {
+      color: #9ba4aa; }
+  .confirm-badge:last-child {
+    border: 0;
+    margin-right: 0; }
+  .confirm-badge:only-child {
+    padding-right: 1.5rem; }
+    .confirm-badge:only-child .ui-icon--confirm {
+      right: 0; }

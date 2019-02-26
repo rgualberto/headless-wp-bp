@@ -7,6 +7,10 @@ export const GET_DATA_BY_SLUG = 'wp_data/GET_DATA_BY_SLUG';
 export const SET_DATA_BY_SLUG = 'wp_data/SET_DATA_BY_SLUG';
 export const GET_PAGES_LIST = 'wp_data/GET_PAGES_LIST';
 export const SET_PAGES_LIST = 'wp_data/SET_PAGES_LIST';
+export const GET_POSTS_LIST = 'wp_data/GET_POSTS_LIST';
+export const SET_POSTS_LIST = 'wp_data/SET_POSTS_LIST';
+export const GET_CAMPAIGNS_LIST = 'wp_data/GET_CAMPAIGNS_LIST';
+export const SET_CAMPAIGNS_LIST = 'wp_data/SET_CAMPAIGNS_LIST';
 export const GET_MENU = 'wp_data/GET_MENU';
 export const SET_MENU = 'wp_data/SET_MENU';
 export const CLEAR_API_CONTENT = 'wp_data/CLEAR_API_CONTENT';
@@ -20,7 +24,9 @@ export const initialState = {
 	},
 	menus: {},
 	lists: {
-		pages: []
+		pages: [],
+		posts: [],
+		campaigns: []
 	}
 }
 
@@ -52,6 +58,24 @@ export const wpDataReducer = (state = initialState, action = {}) => {
 					lists: {
 						...state.lists,
 						pages: action.payload
+					}
+				};
+
+			case SET_POSTS_LIST:
+				return {
+					...state,
+					lists: {
+						...state.lists,
+						posts: action.payload
+					}
+				};
+
+			case SET_CAMPAIGNS_LIST:
+				return {
+					...state,
+					lists: {
+						...state.lists,
+						campaigns: action.payload
 					}
 				};
 
@@ -100,6 +124,14 @@ export const getDataBySlug = (dataType, slug, baseType) => ({
 
 export const getPagesList = () => ({
 	type: GET_PAGES_LIST
+});
+
+export const getPostsList = () => ({
+	type: GET_POSTS_LIST
+});
+
+export const getCampaignsList = () => ({
+	type: GET_CAMPAIGNS_LIST
 });
 
 export const getMenu = (slug) => ({

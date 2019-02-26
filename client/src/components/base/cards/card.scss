@@ -1,0 +1,18 @@
+@import '../../../globals/globals.scss';
+
+.cards-wrap.grid {
+  justify-content: center;
+}
+
+.card {
+  min-width: rem(300);
+  background: $white;
+  box-shadow: $genericBoxShadow;
+  border-radius: $borderRadius;
+  margin: rem(40) rem(18);
+  padding: rem(40);
+
+  ul {
+    margin: rem(15) rem(20);
+  }
+}
