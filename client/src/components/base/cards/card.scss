@@ -15,4 +15,10 @@
   ul {
     margin: rem(15) rem(20);
   }
+
+  a {
+    &:hover {
+      color: $coolGrey9;
+    }
+  }
 }

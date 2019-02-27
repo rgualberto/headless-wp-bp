@@ -31,12 +31,39 @@ class Header extends Component {
 					"para2": true,
           "nav__item--current": _.toLower(pageName) === _.toLower(item.title)
         });
+				const itemId = item.ID;
+				const subItems = _.filter(mainMenu, menu => item.ID == menu.menu_item_parent);
+				const subItemMarkup = !_.isEmpty(subItems)
+																? subItems.map((item, i) => {
+																		const liClasses = classNames({
+																			"nav__sub-item": true,
+																			"para2": true,
+																			"nav__sub-item--current": _.toLower(pageName) === _.toLower(item.title)
+																		});
+
+																		return (
+																			<li key={item.object_id} className={liClasses}>
+																				<Link key={item.ID} to={item.url}>
+																					{item.title}
+																				</Link>
+																			</li>
+																		);
+																	})
+																: null;
+
+				if (item.menu_item_parent !== '0') return;
 
 				return (
 					<li key={item.object_id} className={liClasses}>
 						<Link key={item.ID} to={item.url}>
 							{item.title}
 						</Link>
+
+						{!_.isEmpty(subItems) &&
+							<ul className="nav__sub-menu">
+								{subItemMarkup}
+							</ul>
+						}
 					</li>
 				);
 			})

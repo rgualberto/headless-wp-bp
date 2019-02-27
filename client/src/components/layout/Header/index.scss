@@ -65,20 +65,86 @@ nav
   }
 
   .nav__item {
+    position: relative;
     margin: 0 rem(2);
 
     @include breakpoint($medium) {
     	margin: 0 rem(8);
     }
 
-    &.nav__item--current a {
+    &.nav__item--current > a {
       color: $white;
       background-color: $cerulean;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    &:hover {
+      > ul {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 5px);
+      }
+    }
+
+    > ul {
+      position: absolute;
+      top: 100%;
+      opacity: 0;
+      visibility: hidden;
+      left: 50%;
+      transform: translate(-50%, -15px);
+      width: rem(150);
+      background-color: $white;
+      border-radius: $borderRadius;
+      box-shadow: $genericBoxShadow;
+      list-style: none;
+      margin: 0;
+      padding: rem(10) 0;
+      z-index: 1;
+      transition: transform $shortAnimationTime ease-in-out 0s,
+                  opacity $shortAnimationTime ease-in-out 0s,
+                  visibility $shortAnimationTime ease-in-out 0s;
+
+      .nav__sub-item--current {
+        background-color: $coolGrey3;
+
+        a {
+          color: $black;
+
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+
+      li {
+        list-style: none;
+        margin: 0;
+        padding: rem(10) rem(18);
+
+        > a {
+          display: block;
+
+          &:hover {
+            color: $coolGrey9;
+          }
+        }
+      }
     }
 
     > a {
+      position: relative;
+      display: block;
       border-radius: rem(3);
     	padding: rem(5) rem(10);
+      z-index: 2;
+
+      &:hover {
+        color: $coolGrey9;
+      }
     }
   }
 }

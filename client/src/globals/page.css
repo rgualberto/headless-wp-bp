@@ -1286,6 +1286,8 @@ a {
   padding: 2.5rem; }
   .card ul {
     margin: 0.9375rem 1.25rem; }
+  .card a:hover {
+    color: #9ba4aa; }
 
 /************ layout templates until we figure out better workflow ************/
 /***************************
