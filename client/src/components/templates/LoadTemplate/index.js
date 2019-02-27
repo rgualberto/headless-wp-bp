@@ -22,6 +22,9 @@ const AsyncDefault = AsyncChunks.generateChunk(() =>
 const AsyncHome = AsyncChunks.generateChunk(() =>
 	import( /* webpackChunkName: "Home" */ '../Home'));
 
+const AsyncAbout = AsyncChunks.generateChunk(() =>
+	import( /* webpackChunkName: "About" */ '../About'));
+
 const AsyncPost = AsyncChunks.generateChunk(() =>
 	import( /* webpackChunkName: "Post" */ '../Post'));
 
@@ -31,6 +34,7 @@ const AsyncCampaign = AsyncChunks.generateChunk(() =>
 const templates = {
 	home: AsyncHome,
 	default: AsyncDefault,
+	about: AsyncAbout,
 	post: AsyncPost,
 	campaign: AsyncCampaign
 }
