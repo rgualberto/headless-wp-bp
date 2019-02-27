@@ -46,7 +46,7 @@ a {
 }
 
 [data-fade-in] {
-  opacity: 0;
+  opacity: 0.4;
   animation-iteration-count: 1;
   animation: component-fade-in $mediumAnimationTime normal forwards ease-in-out;
 }

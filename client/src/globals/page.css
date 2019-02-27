@@ -965,7 +965,7 @@ a {
   padding: 0; }
 
 [data-fade-in] {
-  opacity: 0;
+  opacity: 0.4;
   animation-iteration-count: 1;
   animation: component-fade-in 0.55s normal forwards ease-in-out; }
 
